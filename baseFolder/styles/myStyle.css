@@ -1,1 +1,130 @@
-/* Styles go here */
+:root {
+  --color-bg: #959595;
+  --color-text: #111827;
+  --color-primary: #b4ccff;
+  --color-primary-contrast: #ffffff;
+
+  --ff-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --fs-base: 1rem;
+  --line-base: 1.5;
+
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+
+  --container-max: 1100px;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ff-sans);
+  font-size: var(--fs-base);
+  line-height: var(--line-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+a:focus,
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3 {
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, serif;
+}
+
+p {
+  margin: 0 0 1rem 0;
+}
+
+ul, ol {
+  margin: 0 0 1rem 1.25rem;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+:focus {
+  outline: 3px solid rgba(37,99,235,0.25);
+  outline-offset: 2px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+}
+
+.col {
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary);
+  color: var(--color-primary-contrast);
+  text-align: center;
+  cursor: pointer;
+  border: none;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  padding: var(--space-md);
+}
+
+@media (max-width: 600px) {
+  :root {
+    --container-max: 100%;
+  }
+  .row {
+    gap: var(--space-md);
+  }
+  .col {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
