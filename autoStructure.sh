@@ -1,5 +1,4 @@
 #!/bin/bash
-...existing code...
 mkdir -p baseFolder/{styles,scripts,database}
 cd baseFolder || exit 1
 
@@ -20,4 +19,3 @@ echo "/* Styles go here */" > styles/myStyle.css
 echo "// JavaScript starts here" > scripts/myScripts.js
 # create an empty DB file
 : > database/myDB.db
-...existing code...
