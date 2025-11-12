@@ -1,1 +1,0 @@
-// JavaScript starts here

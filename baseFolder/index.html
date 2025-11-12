@@ -1,56 +1,121 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<link rel='stylesheet' href='styles/myStyle.css' />
-		<script src='scripts\myScripts.js'></script>
-		<title>My Home Page</title>
-	</head>
-		<body>
+<html lang="en">
 
-			<h1>My web page</h1>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Demo page showing spans/divs, abbreviations, quotes, code, meta tags, tables with rowspan/colspan, description lists, addresses, bidi and sectioning." />
+  <meta name="author" content="Student" />
+  <title>HTML Feature Demonstration</title>
+  <link rel="stylesheet" href="styles/myStyle.css" />
+  <script defer src="scripts/myScripts.js"></script>
+</head>
 
-			<h2>What this is</h2>
-			<p>A simple page put together using HTML. <em>I said a simple page put together using HTML.</em> A simple page put together using HTML.</p>
+<body>
+  <header class="site-header container">
+    <h1>HTML Feature Demonstration</h1>
+    <nav>
+      <ul class="row">
+        <li class="col"><a href="#inline">Inline</a></li>
+        <li class="col"><a href="#tables">Tables</a></li>
+        <li class="col"><a href="#lists">Lists</a></li>
+      </ul>
+    </nav>
+  </header>
 
-			<h2>Why this is</h2>
-			<ul>
-				<li>To learn HTML</li>
-				<li>
-					To show off
-					<ol>
-						<li>To my friends</li>
-						<li>To my cat</li>
-						<li>To the little talking duck in my brain</li>
-					</ol>
-				</li>
-				<li>Lorem Ipsum</li>
-			</ul>
+  <main class="container">
+    <article id="inline" class="card">
+      <h2>Span and Div</h2>
+      
+      <div class="example-row">
+        <div class="boxed">Block box (div)</div>
+        <span class="pill">Inline pill (span)</span>
+      </div>
 
-			<h2>Where to find the tutorial</h2>
-			<p><a href="http://www.htmldog.com"><img src="http://www.htmldog.com/badge1.gif" width="120" height="90" alt="HTML Dog"></a></p>
+      <h3>Text: Abbreviations, Quotations, and Code</h3>
+      
+      <p>
+        Abbreviation example: <abbr title="As Soon As Possible">ASAP</abbr> means to do something quickly.
+      </p>
+      
+      <p>
+        Inline quote: <q cite="https://example.com">Keep it simple</q>.
+      </p>
+      <blockquote cite="https://example.com">
+        <p>Longer quoted text should be in a blockquote. — Source</p>
+      </blockquote>
+      <p>Code examples:</p>
+      <pre><code>&lt;div class="boxed"&gt;Example&lt;/div&gt;</code></pre>
+      <p>Inline code: <code>const x = 5;</code></p>
+    </article>
 
-			<h3>Some random table</h3>
-			<table>
-				<tr>
-					<td>Row 1, cell 1</td>
-					<td>Row 1, cell 2</td>
-					<td>Row 1, cell 3</td>
-				</tr>
-				<tr>
-					<td>Row 2, cell 1</td>
-					<td>Row 2, cell 2</td>
-					<td>Row 2, cell 3</td>
-				</tr>
-				<tr>
-					<td>Row 3, cell 1</td>
-					<td>Row 3, cell 2</td>
-					<td>Row 3, cell 3</td>
-				</tr>
-				<tr>
-					<td>Row 4, cell 1</td>
-					<td>Row 4, cell 2</td>
-					<td>Row 4, cell 3</td>
-				</tr>
-			</table>
-		</body>
+    <article id="tables" class="card">
+      <h2>Tables: header cells and merging (rowspan and colspan)</h2>
+      <table>
+        <caption>Monthly Report</caption>
+        <thead>
+          <tr>
+            <th scope="col">Category</th>
+            <th scope="col">Jan</th>
+            <th scope="col">Feb</th>
+            <th scope="col">Mar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Sales</th>
+            <td>120</td>
+            <td>150</td>
+            <td>170</td>
+          </tr>
+          <tr>
+            <th scope="row">Returns</th>
+            <td>5</td>
+            <td>3</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <th scope="row">Totals</th>
+            <!-- colspan to span two months -->
+            <td colspan="2">Summary for Jan–Feb</td>
+            <!-- rowspan to cover two rows -->
+            <td rowspan="2">Quarter total</td>
+          </tr>
+          <tr>
+            <th scope="row">Notes</th>
+            <td colspan="2">Adjusted for promotion</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <section id="lists" class="card">
+      <h2>Description Lists and Text: Addresses, Definitions, and Editorial</h2>
+
+      <h3>Description List!</h3>
+      <dl>
+        <dt>HTTP</dt>
+        <dd>HyperText Transfer Protocol — the foundation of data communication for the web.</dd>
+        <dt>CSS</dt>
+        <dd>Styles that control presentation.</dd>
+      </dl>
+
+      <h3>Address</h3>
+      <address>
+        Example Organization<br />
+        123 Learning Way<br />
+        <a href="mailto:info@example.org">info@example.org</a>
+      </address>
+
+      <h3>Definitions and Editorial</h3>
+      <p>Term defined: <dfn id="term">progressive enhancement</dfn> — start basic and layer on features.</p>
+      <p>Editorial changes: <del>Old sentence.</del> <ins>Updated sentence.</ins></p>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p><time datetime="2025-11-10">2025</time> Demo — <a href="#top">Back to top</a></p>
+  </footer>
+</body>
+
 </html>
